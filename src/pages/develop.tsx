@@ -69,6 +69,7 @@ const CameraDeviceTest = (): JSX.Element => {
                         ref={refVideo}
                         className="border rounded"
                         autoPlay
+                        playsInline
                     ></video>
                     <canvas
                         id="picture"
