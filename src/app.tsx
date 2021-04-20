@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import logo from "./logo.svg";
 import "./app.css";
 
@@ -8,8 +8,11 @@ import DevelopPage from "./pages/develop";
 const App = (): JSX.Element => {
     return (
         <Router>
-            <Route path="/" exact component={ReactApp} />
-            <Route path="/develop" exact component={DevelopPage} />
+            <Route path="/nocode-develop" exact component={ReactApp} />
+            <Route path="/nocode-develop/develop" exact component={DevelopPage} />
+            <Route>
+                <Redirect to="/nocode-develop" />
+            </Route>
         </Router>
     );
 };
