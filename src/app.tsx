@@ -22,7 +22,7 @@ const ReactApp = (): JSX.Element => {
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <Link to="./develop" className="App-link">
+                <Link to="/nocode-develop/develop" className="App-link">
                     Go to evelopment page
                 </Link>
             </header>
