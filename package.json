@@ -20,9 +20,14 @@
         "typescript": "^4.2.4",
         "web-vitals": "^1.1.1"
     },
+    "homepage": "https://yukipiyo.github.io/nocode-develop/",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
+        "rm": "rm -rf docs",
+        "mv": "mv build docs",
+        "git": "git add . && git commit && git push origin master",
+        "deploy": "npm run rm && npm run build && npm run mv && npm run git",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
