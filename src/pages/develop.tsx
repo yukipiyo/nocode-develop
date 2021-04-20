@@ -19,8 +19,8 @@ const CameraDeviceTest = (): JSX.Element => {
     const constraints = {
         audio: false,
         video: {
-            width: 360,
-            height: 640,
+            width: 640,
+            height: 360,
             facingMode: "user", // front camera
             // facingMode: { exact: "environment" }, // rear camera
         },
@@ -60,24 +60,31 @@ const CameraDeviceTest = (): JSX.Element => {
 
     return (
         <div className="test">
-            <div className="d-flex flex-row mt-3">
+            <div className="d-flex flex-column mt-3">
                 <div className="d-flex flex-column justify-content-center">
-                    <video id="camera" width="360" height="640" ref={refVideo} className="border rounded"></video>
-                    <button onClick={handleOpenCamera} className="btn btn-outline-dark camera mt-3">
-                        カメラ起動
-                    </button>
-                </div>
-                <div className="d-flex flex-column justify-content-center">
+                    <video
+                        id="camera"
+                        width="640"
+                        height="360"
+                        ref={refVideo}
+                        className="border rounded"
+                        autoPlay
+                    ></video>
                     <canvas
                         id="picture"
-                        width="360"
-                        height="640"
+                        width="640"
+                        height="360"
                         ref={refCanvas}
-                        className="border rounded ml-3"
+                        className="border rounded mt-3"
                     ></canvas>
-                    <button onClick={handleCameraShooting} className="btn btn-outline-dark camera mt-3">
-                        カメラ撮影
-                    </button>
+                    <div className="d-flex flex-row">
+                        <button onClick={handleOpenCamera} className="btn btn-outline-dark camera mt-3">
+                            カメラ起動
+                        </button>
+                        <button onClick={handleCameraShooting} className="btn btn-outline-dark camera mt-3">
+                            カメラ撮影
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
